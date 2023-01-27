@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 
-function Home() {
+function Leagues() {
   return (
     <div>
-      Home
+      Leagues HELLO 123
     </div>
   )
 }
 
-export default Home
+export default Leagues

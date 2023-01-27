@@ -3,12 +3,23 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
+import Navbar from './Navbar'
+import Leagues from './Leagues'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+      <BrowserRouter >
+        <Navbar/>
+        <Routes>
+          <Route path={'/'} element={<Home/>} />
+          <Route path={'/leagues'} element={<Leagues/>} />
+          {/* <Route path={'/blog'} element={<Blog/>} /> */}
+        </Routes>
+      </BrowserRouter>
       <h1 className="text-3xl font-bold underline">
         Hello World!
       </h1>
