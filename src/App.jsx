@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import Navbar from './Navbar'
 import Leagues from './Leagues'
+import Blog from './Blog'
 
 
 function App() {
@@ -16,8 +17,6 @@ function App() {
         <Routes>
           <Route path={'/'} element={<Home/>} />
           <Route path={'/leagues'} element={<Leagues/>} />
-          {/* <Route path={'/blog'} element={<Blog/>} /> */}
-          {/* <Route path={'/results'} element={<Results/>} /> */}
         </Routes>
       </BrowserRouter>
     </div>
