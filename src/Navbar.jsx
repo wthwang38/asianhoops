@@ -8,9 +8,9 @@ function Navbar() {
       <ul>
         {/* <Routes>
           <Route path="/" element={<Home/>}/>
-        </Routes> */}
+        </Routes>  */}
         {/* <Link to={"/results"}>Results</Link> */}
-        {/* <Link to={"/blog"}>Blog</Link> */}
+        <Link to={"/blog"}>Blog</Link>
         <Link to={"/leagues"}>Leagues</Link> 
       </ul>
     </div>
