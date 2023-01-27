@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './Home'
 
 function App() {
   const [count, setCount] = useState(0)
