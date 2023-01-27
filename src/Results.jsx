@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Results = () => {
+export const Results = () => {
 
 let currentYear = 2022;
 let searchYear;
