@@ -6,12 +6,18 @@ function Navbar() {
   return (
     <div>
       <ul>
-        {/* <Routes>
-          <Route path="/" element={<Home/>}/>
-        </Routes> */}
-        {/* <Link to={"/results"}>Results</Link> */}
-        {/* <Link to={"/blog"}>Blog</Link> */}
-        <Link to={"/leagues"}>Leagues</Link> 
+        <li>
+          <Link to={"/"}>Home</Link>
+        </li>
+        <li>
+          <Link to={"/leagues"}>Leagues</Link> 
+        </li>
+        <li>
+          <Link to={"/blog"}>Blog</Link>
+        </li>
+        <li>
+          <Link to={"/results"}>Results</Link> 
+        </li>
       </ul>
     </div>
 )
