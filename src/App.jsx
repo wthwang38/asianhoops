@@ -9,7 +9,6 @@ import Blog from './Blog'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
@@ -18,7 +17,6 @@ function App() {
         <Routes>
           <Route path={'/'} element={<Home/>} />
           <Route path={'/leagues'} element={<Leagues/>} />
-          <Route path={'/blog'} element={<Blog/>} />
         </Routes>
       </BrowserRouter>
     </div>
