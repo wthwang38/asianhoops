@@ -5,18 +5,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Home'
 import Navbar from './Navbar'
 import Leagues from './Leagues'
+import Results from './Results'
 import Blog from './Blog'
-
 
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter >
+      <BrowserRouter>
         <Navbar/>
         <Routes>
           <Route path={'/'} element={<Home/>} />
           <Route path={'/leagues'} element={<Leagues/>} />
+          <Route path={'/blog'} element={<Blog/>} />
+          <Route path={'/results'} element={<Results/>} />
         </Routes>
       </BrowserRouter>
     </div>

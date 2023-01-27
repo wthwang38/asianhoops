@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Results = () => {
+const Results = () => {
 
 let currentYear = 2022;
 let searchYear;
@@ -15,3 +15,5 @@ let divison;
     
   )
 }
+
+export default Results
