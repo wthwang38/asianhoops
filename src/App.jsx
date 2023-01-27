@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <img className='object-cover h-48 w-100' src='./basketball.png'/>
         <Navbar/>
         <Routes>
           <Route path={'/'} element={<Home/>} />
