@@ -1,10 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from "react";
+import Navbar from './Navbar';
 
 function Home() {
   return (
     <div>
-      <button className="underline decoration-slate-400">Red button</button>
+      {/* <img className='object-cover h-48 w-100' src='./basketball.png'/> */}
+      <div>
+        Carousel for photo gallery
+      </div>
     </div>
   )
 }
