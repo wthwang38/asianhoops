@@ -6,7 +6,7 @@ import Home from './Home'
 import Navbar from './Navbar'
 import Leagues from './Leagues'
 import Results from './Results'
-import Blog from './Blog'
+import Blogs from './Blogs'
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path={'/'} element={<Home/>} />
           <Route path={'/leagues'} element={<Leagues/>} />
-          <Route path={'/blog'} element={<Blog/>} />
+          <Route path={'/blogs'} element={<Blogs/>} />
           <Route path={'/results'} element={<Results/>} />
         </Routes>
       </BrowserRouter>
