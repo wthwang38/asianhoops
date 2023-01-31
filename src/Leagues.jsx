@@ -30,11 +30,11 @@ function Leagues() {
   ]
 
   return (
-    <div className="bg-white mx-auto pb-10 grid max-w-2xl grid-cols-2 items-center gap-y-8 gap-x-8 py-32 px-0 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    <div className="bg-white mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
       {leagues.map(league => {
         return (
-          <div key={league.id} className="gap-4 mx-1 my-3 gsm:gap-6 lg:gap-8 shadow hover:shadow-lg hover:shadow-orange-500 bg-slate-100">
-            <dl className="mx-1 text-2xl font-bold tracking-tight text-red-600 sm:text-4xl">{league.name}
+          <div key={league.id} className="gap-4 my-3 gsm:gap-6 lg:gap-8">
+            <dl className="text-3xl font-bold tracking-tight text-red-600 sm:text-4xl">{league.name}
               <img src={league.image} alt={league.id} className="rounded-lg bg-gray-100"/>
               <dt className="mt-4 text-gray-600 text-base">{league.desc}</dt>
             </dl>
