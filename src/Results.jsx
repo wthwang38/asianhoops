@@ -9,12 +9,10 @@ let divison;
 
   return (
     <div>
-      <header>{currentYear} Results</header>
-        
-        
+      <header className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{currentYear} Results</header>
       <div>
-        <Card />
-        <div id="sidebar" className="side bar mt-4 w-100 fixed">
+      <div className="flex">
+        <div id="sidebar" className="side bar h-screen sticky top-10">
           <div className="border-b-2 pb-lg">
             <h2 className="font-bold">By Tournaments</h2>
             <p>Summer Nights</p>
@@ -26,11 +24,15 @@ let divison;
           <p>2022</p>
           <p>2021</p>
           <div>x</div>
-          </div>
-
         </div>
-    
+          <div className="lg:pl-[19.5rem] ml-20">
+            <Card />
+          </div>
+      </div>
+
+      </div>
     </div>
+
     
   )
 }
