@@ -29,19 +29,45 @@ function Leagues() {
     }
   ]
 
+  const execDownload = () => {
+     // file object
+     // new Blob(["src/assets/physeval.pdf"], {type: 'pdf'});
+     fetch('src/assets/physeval.pdf').then(response => {
+       response.blob().then(blob => {
+         // anchor link
+          const file = window.URL.createObjectURL(blob) 
+          const element = document.createElement("a");
+          element.href = file
+          element.download = "physEval" + Date.now() + ".pdf";
+          element.click()
+          console.log('hellodo')
+        })
+      })
+  }
+
+  
+
+
   return (
-    <div className="bg-white mx-auto pb-10 grid max-w-2xl grid-cols-2 items-center gap-y-8 gap-x-8 py-32 px-0 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    <>
+      <div className="btnDiv">
+        <button id="downloadBtn" value="download" onClick={() => execDownload()}>Physical Evaluation</button>
+      </div>
+      <div className="bg-slate-300 mx-auto pb-10 grid max-w-2xl grid-cols-2 items-center gap-y-8 gap-x-8 py-32 px-0 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
       {leagues.map(league => {
         return (
-          <div key={league.id} className="gap-4 mx-1 my-3 gsm:gap-6 lg:gap-8 shadow hover:shadow-lg hover:shadow-orange-500 bg-slate-100">
-            <dl className="mx-1 text-2xl font-bold tracking-tight text-red-600 sm:text-4xl">{league.name}
-              <img src={league.image} alt={league.id} className="rounded-lg bg-gray-100"/>
-              <dt className="mt-4 text-gray-600 text-base">{league.desc}</dt>
-            </dl>
+          <div key={league.id} className="rounded-lg bg-orange-400 gap-4 mx-1 my-3 gsm:gap-6 lg:gap-8 shadow hover:shadow-lg hover:shadow-blue-600">
+            <div className="rounded-lg font-bold tracking-tight sm:text-4xl">
+              <dl className="m-2 text-red-600 bg-slate-100 rounded-lg text-3xl">{league.name}
+                <img src={league.image} alt={league.id} className="rounded-lg"/>
+                <dt className="rounded-lg bg-slate-50 opacity-75 text-gray-600 text-base">{league.desc}</dt>
+              </dl>
+            </div>
           </div>
         )
       })}
-    </div>
+      </div>
+    </>
   )
 }
 
