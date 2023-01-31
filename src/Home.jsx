@@ -10,7 +10,6 @@ function Home() {
       <div>
         Carousel for photo gallery
       </div>
-      <Footer />
     </div>
   )
 }
