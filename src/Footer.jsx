@@ -114,7 +114,7 @@ function Footer() {
 
           <div className='text-center'>
             <span className='text-blue-600 font-bold'>Asian Hoops</span>
-            <img className="w-20 mx-auto" src="../basketball.png" alt="basketball-image"/>
+            <img className="w-20 mx-auto" src="src/assets/basketball.png" alt="basketball-image"/>
           </div>
         </div>
       </div>
