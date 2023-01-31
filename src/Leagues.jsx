@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
+import waiverform from "./assets/waiverform.pdf";
+import { FolderArrowDownIcon } from '@heroicons/react/24/outline'
 
 function Leagues() {
   const leagues = [
@@ -12,7 +14,7 @@ function Leagues() {
     {
       "name": "Boy's teen",
       "id": 2,
-      "desc": "Honesty, Hard Work and Discipline – three traits we look for in a basketball player. If you’ve got the desire to work hard, the discipline to play as a team member and the skills to learn, then the NY Rockits Athletes In Action would welcome you to come down to tryout and to become...",
+      "desc": "Honesty, Hard Work and Discipline – three traits we look for in a basketball player. If you’ve got the desire to work hard, the discipline to play as a team member and the skills to learn, then the NY Rockits Athletes In Action would welcome you to come down to tryout and to become...\nPlayers interested must email Coach Denny Lee at dlee@asianhoops.com to schedule a tryout. Please include your name, height, birth date, school/grade and contact number.\nPlayer Fees: $100 per year (September 2022 – August 2023). Fees covers gym practices and local tournament entry fees",
       "image": "https://nyrockits.org/wp-content/uploads/2021/12/NY_Rockits_Young_Lifes.jpg"
     },
     {
@@ -28,46 +30,59 @@ function Leagues() {
       "image": "https://nyrockits.org/wp-content/uploads/2021/12/NY_Rockits_JBL_Basketball.jpg"
     }
   ]
+  const [isActive, setIsActive] = useState(false);
 
   const execDownload = () => {
-     // file object
-     // new Blob(["src/assets/physeval.pdf"], {type: 'pdf'});
      fetch('src/assets/physeval.pdf').then(response => {
        response.blob().then(blob => {
-         // anchor link
           const file = window.URL.createObjectURL(blob) 
           const element = document.createElement("a");
-          element.href = file
-          element.download = "physEval" + Date.now() + ".pdf";
-          element.click()
-          console.log('hellodo')
+            element.href = file
+            element.download = "physEval" + Date.now() + ".pdf";
+            element.click()
         })
       })
   }
 
-  
-
-
   return (
-    <>
-      <div className="btnDiv">
-        <button id="downloadBtn" value="download" onClick={() => execDownload()}>Physical Evaluation</button>
+    <div className="bg-slate-300">
+      <div className="m-auto">
+        <text className="text-blue-600">
+          Please prepare to fill out the downloadable forms below prior to showing up.
+        </text><br></br>
+        <button className="text-blue-600 bg-slate-200 text-lg hover:cursor-pointer m-4 " value="download" onClick={() => execDownload()}>
+          Download Pysical Evaluation Form
+        </button>
+        <button href={waiverform} target="_blank" rel="noreferrer" className="text-blue-600 bg-slate-200 text-lg m-4">
+          Open Waiver Form in New Tab
+        </button>
       </div>
-      <div className="bg-slate-300 mx-auto pb-10 grid max-w-2xl grid-cols-2 items-center gap-y-8 gap-x-8 py-32 px-0 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto pb-10 grid max-w-2xl grid-cols-2 items-center gap-y-3 gap-x-3 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
       {leagues.map(league => {
         return (
-          <div key={league.id} className="rounded-lg bg-orange-400 gap-4 mx-1 my-3 gsm:gap-6 lg:gap-8 shadow hover:shadow-lg hover:shadow-blue-600">
-            <div className="rounded-lg font-bold tracking-tight sm:text-4xl">
-              <dl className="m-2 text-red-600 bg-slate-100 rounded-lg text-3xl">{league.name}
-                <img src={league.image} alt={league.id} className="rounded-lg"/>
-                <dt className="rounded-lg bg-slate-50 opacity-75 text-gray-600 text-base">{league.desc}</dt>
-              </dl>
-            </div>
+          <div key={league.id} className="rounded-lg font-bold tracking-tight sm:text-4xl bg-orange-400 mx-1 my-3 gsm:gap-6 lg:gap-8 shadow hover:shadow-lg hover:shadow-blue-600">
+            <div className="m-2 text-red-600 bg-slate-100 rounded-lg text-3xl">{league.name}
+              <img src={league.image} alt={league.id} className="rounded-lg my-3"/>
+            <div className="rounded-lg bg-slate-50 opacity-75 text-gray-600 text-base">{league.desc}</div>
+          </div>
+            {/* <div className="accordion">
+              {leagues.map(league => {
+                return (
+                  <div className="accordion-item">
+                    <div className="accordion-title">
+                      <div>{league.name}</div>
+                      <div>+</div>
+                    </div>
+                    <div className="accordion-content">{league.desc}</div>
+                  </div>
+                )
+              })}
+            </div> */}
           </div>
         )
       })}
       </div>
-    </>
+    </div>
   )
 }
 
