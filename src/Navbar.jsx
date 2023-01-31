@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 function Navbar() {
   return (
     <div>
+
       <nav className="flex items-center justify-between flex-wrap bg-green-300 p-6">
         <img className='object-cover h-48 w-100' src='src/assets/basketball.png'/>
         
