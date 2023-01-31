@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Card from './Card';
 
 export const Results = () => {
 
@@ -9,9 +10,10 @@ let divison;
   return (
     <div>
       <header>{currentYear} Results</header>
-        <div>Content</div>
-        <div>CONTENT</div>
+        
+        
       <div>
+        <Card />
         <div id="sidebar" className="side bar mt-4 w-100 fixed">
           <div className="border-b-2 pb-lg">
             <h2 className="font-bold">By Tournaments</h2>
