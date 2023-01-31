@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
+import waiverform from "./assets/waiverform.pdf";
 
 function Leagues() {
   const leagues = [
@@ -30,30 +31,25 @@ function Leagues() {
   ]
 
   const execDownload = () => {
-     // file object
-     // new Blob(["src/assets/physeval.pdf"], {type: 'pdf'});
      fetch('src/assets/physeval.pdf').then(response => {
        response.blob().then(blob => {
-         // anchor link
           const file = window.URL.createObjectURL(blob) 
           const element = document.createElement("a");
-          element.href = file
-          element.download = "physEval" + Date.now() + ".pdf";
-          element.click()
-          console.log('hellodo')
+            element.href = file
+            element.download = "physEval" + Date.now() + ".pdf";
+            element.click()
         })
       })
   }
-
   
-
-
   return (
-    <>
-      <div className="btnDiv">
-        <button id="downloadBtn" value="download" onClick={() => execDownload()}>Physical Evaluation</button>
+    <div className="bg-slate-300">
+      <div className="btnDiv ">
+        <a className="text-blue-600 hover:cursor-pointer" value="download" onClick={() => execDownload()}>Download Pysical Evaluation Form</a>
+        <br></br>
+        <a href={waiverform} target="_blank" rel="noreferrer" className="text-blue-600">Open Waiver Form in New Tab</a>
       </div>
-      <div className="bg-slate-300 mx-auto pb-10 grid max-w-2xl grid-cols-2 items-center gap-y-8 gap-x-8 py-32 px-0 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+      <div className="bg-slate-300 mx-auto pb-10 grid max-w-2xl grid-cols-2 items-center gap-y-6 gap-x-8 py-32 px-0 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
       {leagues.map(league => {
         return (
           <div key={league.id} className="rounded-lg bg-orange-400 gap-4 mx-1 my-3 gsm:gap-6 lg:gap-8 shadow hover:shadow-lg hover:shadow-blue-600">
@@ -67,7 +63,7 @@ function Leagues() {
         )
       })}
       </div>
-    </>
+    </div>
   )
 }
 
