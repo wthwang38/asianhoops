@@ -7,10 +7,10 @@
                 <mxCell id="2" value="Game Model&lt;br&gt;id&lt;br&gt;team_one_id&lt;br&gt;team_one_score&lt;br&gt;team_two_id&lt;br&gt;team_two_score&lt;br&gt;date&lt;br&gt;location" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="160" y="20" width="130" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Team Model&lt;br&gt;id&lt;br&gt;team_name" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="3" value="Team Model&lt;br&gt;id&lt;br&gt;team_name&lt;br&gt;wins&lt;br&gt;losses&lt;br&gt;league" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="320" y="20" width="120" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="League Model&lt;br&gt;id&lt;br&gt;team_id&lt;br&gt;description" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="5" value="League Model&lt;br&gt;id&lt;br&gt;name&lt;br&gt;description" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="490" y="20" width="120" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="Blog Model&lt;br&gt;id&lt;br&gt;game_id&lt;br&gt;title&lt;br&gt;date&lt;br&gt;content&lt;br&gt;author" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
