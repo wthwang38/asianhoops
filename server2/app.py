@@ -27,8 +27,8 @@ def home():
 def get_all_leagues():
     leagues = League.query.all()
     if len(leagues):
-        for league in leagues:
-            return jsonify([league.toJSON() for league in leagues])
+        # for league in leagues:
+        return jsonify([league.toJSON() for league in leagues])
     else:
         return {}, 404
 
