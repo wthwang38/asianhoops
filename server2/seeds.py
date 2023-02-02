@@ -7,15 +7,10 @@ def run_seeds():
         db.drop_all()
         db.create_all()
         print('Seeding database ... 🌱')
-        # league = [
-        #   ['amateur','this is a test'], 
+   
         league1 = League("amateur", 'this is a test description')
         league2 = League("pro", 'this text should be longer')
         league3 = League("plebs", 'whatever')
-        #   ["autl","definitely a test"]
-        # ]
-        # team = Team("will", 0, 0, 1)
-        # db.session.add(team)
     
     # for league in leagues:
     #   new_league = League(league)
@@ -24,13 +19,6 @@ def run_seeds():
         db.session.add(league2)
         db.session.add(league3)
         db.session.commit()
-
-        # rooms = ['Turing', 'Collins', 'Kay', 'Borg', 'Johnson']
-        # event_names = ['Rails', 'Python', 'React']
-        # start_times = ['01/13/23 10:00:00',
-        #                '01/13/23 13:00:00', '01/13/23 17:00:00']
-        # end_times = ['01/13/23 11:00:00',
-        #              '01/13/23 14:00:00', '01/13/23 18:00:00']
 
         # for room in rooms:
         #     new_classroom = Classroom(room)
@@ -64,6 +52,7 @@ def run_seeds():
         # seat3.student_name = user1.username
         # db.session.add(new_booking_1)
         # db.session.commit()
+        
     print('Done! 🌳')
 
 
