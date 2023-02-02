@@ -9,8 +9,9 @@ def run_seeds():
         print('Seeding database ... 🌱')
         # league = [
         #   ['amateur','this is a test'], 
-        league1 = League("amateur")
-        league2 = League("pro")
+        league1 = League("amateur", 'this is a test description')
+        league2 = League("pro", 'this text should be longer')
+        league3 = League("plebs", 'whatever')
         #   ["autl","definitely a test"]
         # ]
         # team = Team("will", 0, 0, 1)
@@ -21,6 +22,7 @@ def run_seeds():
 
         db.session.add(league1)
         db.session.add(league2)
+        db.session.add(league3)
         db.session.commit()
 
         # rooms = ['Turing', 'Collins', 'Kay', 'Borg', 'Johnson']
